@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+  backend:
+    image: ${DOCKER_REGISTRY-}backend
+    build:
+      context: .
+      dockerfile: Backend/Dockerfile
+    networks: 
+      - Dynamic-Sun 
+
+
+  postgres-server:
+    ports:
+     - '5434:5432' 
+    image: postgres:15.1
+    container_name: postgresql
+    environment:
+      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_DB: OlympusHealth
+      POSTGRES_USER: 'postgres'
+    networks:
+      - Dynamic-Sun
+   
+  client:
+    image: client
+    build:
+        context: ./client
+        dockerfile: Dockerfile
+    networks:
+      - Dynamic-Sun
+
+
+networks:
+  Dynamic-Sun:
+    driver: bridge 
+
+
+  
