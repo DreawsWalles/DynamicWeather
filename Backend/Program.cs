@@ -1,7 +1,9 @@
+using AutoMapper;
 using Business.Repositories.DataRepositories;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Data;
 using Repositories.Repositories.DataRepositories;
+using Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,13 +15,28 @@ builder.Services.AddDbContext<Context>(
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
+#region Repositories
+
 builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
 builder.Services.AddScoped<INodeRepository, NodeRepository>();
 builder.Services.AddScoped<IWeatherEffectsRepository, WeatherEffectRepository>();
 builder.Services.AddScoped<IWildDirectionRepository, WildDirectionRepository>();
 
+#endregion
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+#region Automapper
+
+var mappingConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new MappingProfile());
+});
+
+IMapper mapper = mappingConfig.CreateMapper(); 
+builder.Services.AddSingleton(mapper);
+
+#endregion
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
