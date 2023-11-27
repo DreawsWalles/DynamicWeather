@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class WeaterEffect
+    public class WildDirection
     {
         public Guid Id { get; set; }
         public required string Name { get; set; }
+
+        public required ICollection<Node> Nodes { get; set; }
     }
 }

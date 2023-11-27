@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class WindDirection
+    public class WeatherEffect
     {
         public Guid Id { get; set; }
         public required string Name { get; set; }
 
-        public virtual ICollection<WindDirection>? Parent { get; set; }
+        public required ICollection<Node> Nodes { get; set; }
     }
 }
