@@ -1,5 +1,6 @@
 using AutoMapper;
 using Business.Repositories.DataRepositories;
+using Business.Services;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Data;
 using Repositories.Repositories.DataRepositories;
@@ -34,6 +35,15 @@ var mappingConfig = new MapperConfiguration(mc =>
 
 IMapper mapper = mappingConfig.CreateMapper(); 
 builder.Services.AddSingleton(mapper);
+
+#endregion
+
+#region Services
+
+builder.Services.AddScoped<IDocumentService, DocumentService>();
+builder.Services.AddScoped<INodeService, NodeService>();
+builder.Services.AddScoped<IWeatherEffectService, WeatherEffectService>();
+builder.Services.AddScoped<IWildDirectionService, WildDirectionService>();
 
 #endregion
 
