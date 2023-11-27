@@ -1,6 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using Repositories.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<Context>(
+    options => options
+        .UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")),
+    contextLifetime: ServiceLifetime.Scoped,
+    optionsLifetime: ServiceLifetime.Transient);
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
