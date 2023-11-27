@@ -1,4 +1,8 @@
 ﻿using Business.Entities;
+using Business.Entities.Node_WeatherEffect;
+using Business.Entities.Node_WildDirection;
+using Business.Repositories.Data.Configurations.Node_WeatherEffect;
+using Business.Repositories.Data.Configurations.Node_WildDirection;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Data.Configurations;
 using System;
@@ -15,6 +19,8 @@ namespace Repositories.Data
         public DbSet<Node> Nodes { get; set; }
         public DbSet<WeatherEffect> WeaterEffects { get; set; }
         public DbSet<WildDirection> WildDirections { get; set; }
+        public DbSet<WeatherEffectNode> WeaterNodes { get; set; }
+        public DbSet<WildDirectionNode> WildDirectionsNodes { get; set; }
         public Context(DbContextOptions<Context> options) : base(options) 
         {
             //Database.EnsureDeleted();
@@ -27,8 +33,12 @@ namespace Repositories.Data
         {
             modelBuilder.ApplyConfiguration(new DocumentConfiguration());
             modelBuilder.ApplyConfiguration(new NodeConfiguration());
+
             modelBuilder.ApplyConfiguration(new WeatherEffectConfiguration());
+            modelBuilder.ApplyConfiguration(new WeatherEffectNodeConfiguration());
+
             modelBuilder.ApplyConfiguration(new WildDirectionsConfiguration());
+            modelBuilder.ApplyConfiguration(new WildDirectionNodeConfiguration());
         }
 
     }

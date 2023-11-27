@@ -1,4 +1,4 @@
-﻿using Business.Entities;
+﻿using Business.Entities.Node_WeatherEffect;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,5 +1,4 @@
-﻿using Business.Entities;
-using Business.Repositories.DataRepositories;
+﻿using Business.Repositories.DataRepositories;
 using Business.Repositories;
 using System;
 using System.Collections.Generic;
@@ -8,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Data;
+using Business.Entities.Node_WildDirection;
 
 namespace Repositories.Repositories.DataRepositories
 {

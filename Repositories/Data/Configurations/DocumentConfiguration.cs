@@ -16,8 +16,10 @@ namespace Repositories.Data.Configurations
         {
             builder.HasKey(e => e.Id);
 
-            builder.Property(e => e.Name).IsRequired();
-            builder.Property(e => e.Description).IsRequired();
+            builder.Property(e => e.Name)
+                .IsRequired();
+            builder.Property(e => e.Description)
+                .IsRequired();
 
             builder.HasMany(e => e.Nodes)
                 .WithOne(e => e.Document)

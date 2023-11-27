@@ -17,7 +17,7 @@ services:
     container_name: postgresql
     environment:
       POSTGRES_PASSWORD: 'postgres'
-      POSTGRES_DB: OlympusHealth
+      POSTGRES_DB: DynamicWeather
       POSTGRES_USER: 'postgres'
     networks:
       - Dynamic-Sun

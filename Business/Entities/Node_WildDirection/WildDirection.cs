@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Entities
+namespace Business.Entities.Node_WildDirection
 {
-    public class WeatherEffect
+    public class WildDirection
     {
         public Guid Id { get; set; }
         public required string Name { get; set; }
 
-        public required ICollection<Node> Nodes { get; set; }
+        public required ICollection<WildDirectionNode> WildDirectionNodes { get; set; }
     }
 }

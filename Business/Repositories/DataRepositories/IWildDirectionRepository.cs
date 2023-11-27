@@ -1,4 +1,4 @@
-﻿using Business.Entities;
+﻿using Business.Entities.Node_WildDirection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
