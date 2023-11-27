@@ -4,8 +4,8 @@ services:
   backend:
     image: ${DOCKER_REGISTRY-}backend
     build:
-      context: .
-      dockerfile: Backend/Dockerfile
+      context: /Backend
+      dockerfile: Dockerfile
     networks: 
       - Dynamic-Sun 
 
@@ -25,7 +25,7 @@ services:
   client:
     image: client
     build:
-        context: ./client
+        context: /client
         dockerfile: Dockerfile
     networks:
       - Dynamic-Sun
