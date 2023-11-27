@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Services\Services.csproj" />
+    <ProjectReference Include="..\..\Services\Business.Services.csproj" />
     <ProjectReference Include="..\Business\Business.csproj" />
-    <ProjectReference Include="..\Repositories\Repositories.csproj" />
+    <ProjectReference Include="..\Repositories\Business.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

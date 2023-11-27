@@ -9,9 +9,9 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{8E7785A9-92EF-4CEE-BE85-F4F0B92E7FF1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{BB736FC8-C005-4B47-A74C-CA790F5CC0A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Repositories", "Repositories\Business.Repositories.csproj", "{BB736FC8-C005-4B47-A74C-CA790F5CC0A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\Services\Services.csproj", "{94B5B17B-2354-48D8-8C9B-E7775B013D74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Services", "..\Services\Business.Services.csproj", "{94B5B17B-2354-48D8-8C9B-E7775B013D74}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Interop", "Business.Interop\Business.Interop.csproj", "{646A8BFF-95D3-4462-8B28-4D2B9DA7B974}"
 EndProject
