@@ -19,8 +19,8 @@ namespace Repositories.Data
         public DbSet<Node> Nodes { get; set; }
         public DbSet<WeatherEffect> WeaterEffects { get; set; }
         public DbSet<WildDirection> WildDirections { get; set; }
-        public DbSet<WeatherEffectNode> WeaterNodes { get; set; }
-        public DbSet<WildDirectionNode> WildDirectionsNodes { get; set; }
+        public DbSet<WeatherEffectNode> WeatherEffectNodes { get; set; }
+        public DbSet<WildDirectionNode> WildDirectionNodes { get; set; }
         public Context(DbContextOptions<Context> options) : base(options) 
         {
             //Database.EnsureDeleted();
