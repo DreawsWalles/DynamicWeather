@@ -1,33 +1,40 @@
 import {IFileLoader} from "./IFileLoader";
 import styles from "./FileLoader.module.css"
 import * as XLSX from 'xlsx';
+import {Converter} from "../../../Business/Converter";
 
+const ids = {
+    input: "file-upload-input"
+}
 export function FileLoader(e : IFileLoader){
     function handleFileUpload(event: React.ChangeEvent<HTMLInputElement>) {
-        debugger
-        const file = event.target.files && event.target.files[0];
-
-        if (file) {
-            const reader = new FileReader();
-
-            reader.onload = (e) => {
-                const data = e.target?.result as ArrayBuffer;
-                const workbook = XLSX.read(data, { type: 'array' });
-
-                // Проверка содержимого файла Excel
-                if (workbook.SheetNames.length > 0) {
-                    const sheetName = workbook.SheetNames[0];
-                    const worksheet = workbook.Sheets[sheetName];
-                    const parsedData = XLSX.utils.sheet_to_json(worksheet);
-
-                    // Здесь можно проверять и обрабатывать данные из файла Excel
-                    debugger
-                    console.log(parsedData);
+        if (event.target.files) {
+            const countFiles = event.target.files.length;
+            let reader = new FileReader();
+            for (let i = 0; i < countFiles; i++) {
+                debugger
+                const file = event.target.files[i];
+                const allowedExtensions = ['.xlsx', '.xls', '.xlsm', '.xlsb'];
+                const fileExtension = file.name.slice(((file.name.lastIndexOf(".") - 1) >>> 0) + 2);
+                if(allowedExtensions.includes(fileExtension)){
+                    return;
                 }
-            };
-            reader.readAsArrayBuffer(file);
-            console.log(file);
-            console.log(reader);
+                reader.onload = (e) => {
+                    try {
+                        const data = e.target?.result as ArrayBuffer;
+                        const workBook = XLSX.read(data, {type: 'buffer'});
+                        let result = Converter.XMLToModel(workBook);
+                        if(!result){
+                            return;
+                        }
+                        result.Name = file.name;
+                    } catch (e) {
+                        console.log(e);
+                    }
+
+                }
+                reader.readAsArrayBuffer(file);
+            }
         }
     }
 
@@ -36,9 +43,10 @@ export function FileLoader(e : IFileLoader){
             <label className={styles.fileUploadLabel} htmlFor="file-upload-input">
                 Выберите файл
             </label>
-            <input id="file-upload-input"
+            <input id={ids.input}
                     type="file"
                     style={{ display: 'none' }} onChange={handleFileUpload}
+                   multiple
             />
         </div>
     );

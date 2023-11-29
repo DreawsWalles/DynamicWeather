@@ -14,7 +14,7 @@ export function Logo(props: ILogoProps){
         const hour= props.currentTime.getHours();
         let moon = document.getElementById(ids.logo.moon)!;
         let sun = document.getElementById(ids.logo.sun)!;
-        if(hour > 0 && hour < 6)
+        if(hour >= 0 && hour <= 6)
         {
             moon.classList.remove(styles.none);
             sun.classList.add(styles.none);
