@@ -1,0 +1,32 @@
+.file-upload {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.file-upload-label {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+
+.file-upload-label::before {
+    content: '\1F4C2';
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.file-upload:hover {
+    background-color: #f9f9f9;
+}

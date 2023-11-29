@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: "BlogCube";
+  src: local("BlogCube"), url("./Fonts/blog-cube.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "BlogCubeOutline";
+  src: local("BlogCubeOutline"), url("./Fonts/blog-cube-outline.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "cyberDisplay";
+  src: local("cyberDisplay"), url("./Fonts/cyber-display.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "carbonara";
+  src: local("cyberDisplay"), url("./Fonts/carbonara(FONT BY LYAJKA).ttf") format("truetype");
+  font-weight: normal;
+}

@@ -1,0 +1,21 @@
+.content{
+    position: absolute;
+    top:25px;
+    right: 50px;
+    display: flex;
+    align-items: end;
+    min-height: 120px;
+}
+.text{
+    font-size: 40px;
+    font-family: BlogCube;
+}
+.time{
+    font-size: 18px;
+    font-family: cyberDisplay;
+    letter-spacing: 3px;
+    margin-right: 12px;
+}
+.content:hover{
+    cursor: pointer;
+}
