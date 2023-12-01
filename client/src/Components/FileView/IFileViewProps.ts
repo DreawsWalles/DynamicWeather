@@ -1,6 +1,6 @@
 import {Document} from "../../Business/Entities/DocumentEntity/Document";
 
-export interface IFileView
+export interface IFileViewProps
 {
     file : Document
 }

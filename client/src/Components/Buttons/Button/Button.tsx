@@ -17,6 +17,9 @@ export function Button(props: IButtonProps){
             case "DarkGreen":
                 setColor(styles.darkGreen);
                 break;
+            case "Red":
+                setColor(styles.red);
+                break;
         }
     }, [props.color]);
     useEffect(() => {
@@ -25,11 +28,18 @@ export function Button(props: IButtonProps){
             case "Large":
                 setSize(styles.large);
                 break;
+            case "Small":
+                setSize(styles.small);
+                break;
+            case "Middle":
+                setSize(styles.middle);
+                break;
         }
     }, [props.size]);
     return(
         <div>
-            <button className={`${size} ${color} ${styles.button}`}
+            <button id={props.id?.toString()}
+                    className={`${size} ${color} ${styles.button}`}
                     onClick={props.onClick}>
                 {props.textButton}
             </button>

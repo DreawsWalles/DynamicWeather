@@ -1,1 +1,39 @@
-
+.singleObj{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.content{
+    width: 90vw;
+    height: 1000px;
+    display: flex;
+}
+.buttons{
+    margin-top: 35px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    position: relative;
+}
+.loader{
+    position: absolute;
+    bottom: 0;
+}
+.select{
+    position: relative;
+    right: 200px;
+    bottom: 8px;
+}
+.container{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.btnSave{
+    position: relative;
+    top: -250px;
+    left: 40%;
+}

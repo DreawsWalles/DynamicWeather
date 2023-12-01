@@ -1,6 +1,7 @@
-import {Node} from "./Node/Node";
+import {Node} from "../Node/Node";
+import {WorksheetConverter} from "./WorksheetConverter";
 
-export class Worksheet
+export class Worksheet extends WorksheetConverter
 {
     public Name : string = "";
     public Description : string = "";

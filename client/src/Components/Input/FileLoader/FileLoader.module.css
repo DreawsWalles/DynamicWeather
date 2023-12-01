@@ -1,4 +1,4 @@
-.file-upload {
+.fileUpload {
     position: relative;
     width: 200px;
     height: 40px;
@@ -9,24 +9,51 @@
     display: flex;
     align-items: center;
     padding: 0 10px;
-    font-family: Arial, sans-serif;
+    font-family: Carbonara;
     color: #333;
 }
 
-.file-upload-label {
+.fileUploadLabel {
     flex-grow: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding-right: 10px;
-}
 
-.file-upload-label::before {
+}
+.fileUploadLabel:hover{
+    cursor: pointer;
+}
+.fileUploadLabel::before {
     content: '\1F4C2';
     margin-right: 8px;
-    font-size: 18px;
+    font-size: 22px;
 }
 
-.file-upload:hover {
+.fileUpload:hover {
     background-color: #f9f9f9;
+}
+.White{
+    border: 1px solid rgb(128, 128, 128);
+    background-color: white;
+}
+.White:hover{
+    border:none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.large{
+    font-size: 42px;
+    min-height: 70px;
+    min-width: 450px;
+    padding-left: 20px;
+}
+.large .fileUploadLabel:before{
+    font-size: 40px;
+}
+
+.medium{
+
+}
+
+.medium .fileUploadLabel:before{
+
 }

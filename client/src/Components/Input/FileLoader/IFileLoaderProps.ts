@@ -1,9 +1,9 @@
 import {Document} from "../../../Business/Entities/DocumentEntity/Document";
 
-export interface IFileLoader
+export interface IFileLoaderProps
 {
     color : "White" | "Darkgreen";
-    size : "Large";
+    size : "Large" | "Medium";
     onChange : (e : Document) => void;
     onError : (e : string) => void;
 }

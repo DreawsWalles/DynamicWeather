@@ -1,6 +1,7 @@
-import {WildDirection} from "./WildDirection";
+import {WildDirection} from "../WildDirection";
+import {NodeConverter} from "./NodeConverter";
 
-export class Node
+export class Node extends NodeConverter
 {
     public Date : Date = new Date();
     public Temperature : number = 0;

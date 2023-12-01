@@ -1,0 +1,31 @@
+.table{
+    margin-left: 0;
+    margin-right: 0;
+    overflow-y: scroll;
+    max-height: 600px;
+}
+.title{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.cells{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.row{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+}
+.cell{
+    border: 1px solid rgb(128, 128, 128);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

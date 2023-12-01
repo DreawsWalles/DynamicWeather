@@ -1,0 +1,26 @@
+.selectWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.select {
+    appearance: none;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    width: 200px;
+}
+
+.selectArrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #666;
+}

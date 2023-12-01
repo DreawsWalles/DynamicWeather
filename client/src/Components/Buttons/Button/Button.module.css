@@ -6,36 +6,63 @@
     border-top-right-radius: 15px;
     border: none;
 }
+
 .button:hover{
     cursor: pointer;
 }
+
 .white{
     border: 1px solid rgb(128, 128, 128);
     background-color: white;
 }
+
 .white:hover{
     border: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
+
 .lightGreen{
     background-color: rgba(51, 196, 129, 0.49);
-    border: 1px solid rgb(16, 121, 63);
+    border: 1px solid rgb(24, 92, 55);
 }
+
 .lightGreen:hover{
     border: none;
     box-shadow: 0 0 10px rgb(16, 121, 63) ;
 }
+
 .darkGreen{
     background-color: rgb(24, 92, 55);
     color:white;
 }
+
 .darkGreen:hover{
     box-shadow: 0 0 14px rgba(51, 196, 129, 1);
 }
-
 
 .large{
     min-height: 150px;
     min-width: 450px;
     font-size: 42px;
+}
+.small{
+    width: 130px;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.red {
+    background-color: darkred;
+    color: white;
+    border: 1px solid rgb(128, 128, 128);
+}
+.red:hover{
+    border: none;
+    box-shadow: 0 0 15px lightcoral;
+}
+.middle{
+    min-height: 50px;
+    min-width: 230px;
+    font-size: 29px;
 }
