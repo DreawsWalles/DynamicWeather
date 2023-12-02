@@ -1,5 +1,4 @@
-﻿using Business.Entities.Node_WeatherEffect;
-using Business.Entities.Node_WildDirection;
+﻿using Business.Entities.Node_WildDirection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;

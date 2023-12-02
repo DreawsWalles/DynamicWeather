@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
-    public class Document
+    public class WorkSheet
     {
         public Guid Id { get; set; }
         public required string Name { get; set; }
-        public required ICollection<WorkSheet> Worksheets { get; set; }
+        public required string Description { get; set; }
+        public required Document Document { get; set; }
+        public required ICollection<Node> Nodes { get; set; }
     }
 }

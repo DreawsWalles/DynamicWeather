@@ -1,7 +1,6 @@
 ﻿using Business.Entities;
-using Business.Entities.Node_WeatherEffect;
 using Business.Entities.Node_WildDirection;
-using Business.Repositories.Data.Configurations.Node_WeatherEffect;
+using Business.Repositories.Data.Configurations;
 using Business.Repositories.Data.Configurations.Node_WildDirection;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Data.Configurations;
@@ -17,13 +16,12 @@ namespace Repositories.Data
     {
         public DbSet<Document> Documents { get; set; }
         public DbSet<Node> Nodes { get; set; }
-        public DbSet<WeatherEffect> WeaterEffects { get; set; }
         public DbSet<WildDirection> WildDirections { get; set; }
-        public DbSet<WeatherEffectNode> WeatherEffectNodes { get; set; }
         public DbSet<WildDirectionNode> WildDirectionNodes { get; set; }
+        public DbSet<WorkSheet> WorkSheets { get; set; }
         public Context(DbContextOptions<Context> options) : base(options) 
         {
-            //Database.EnsureDeleted();
+            Database.EnsureDeleted();
             Database.EnsureCreated();
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
@@ -34,8 +32,7 @@ namespace Repositories.Data
             modelBuilder.ApplyConfiguration(new DocumentConfiguration());
             modelBuilder.ApplyConfiguration(new NodeConfiguration());
 
-            modelBuilder.ApplyConfiguration(new WeatherEffectConfiguration());
-            modelBuilder.ApplyConfiguration(new WeatherEffectNodeConfiguration());
+            modelBuilder.ApplyConfiguration(new WorkSheetConfiguration());
 
             modelBuilder.ApplyConfiguration(new WildDirectionsConfiguration());
             modelBuilder.ApplyConfiguration(new WildDirectionNodeConfiguration());

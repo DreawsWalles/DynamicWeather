@@ -16,10 +16,10 @@ namespace Business.Interop
         public int Pressure { get; set; }
         public required ICollection<WildDirectionDTO> Directions { get; set; }
         public double WildSpeed { get; set; }
-        public double CloudCover { get; set; }
-        public double LowerBoundCloudCover { get; set; }
-        public double HorizontalVisibility { get; set; }
-        public required ICollection<WeatherEffectDTO> WeatherEffects { get; set; }
+        public double? CloudCover { get; set; }
+        public double? LowerBoundCloudCover { get; set; }
+        public double? HorizontalVisibility { get; set; }
+        public required string WeatherEffects { get; set; }
 
     }
 }

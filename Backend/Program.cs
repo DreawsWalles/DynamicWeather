@@ -1,6 +1,7 @@
 using AutoMapper;
 using Business.Repositories;
 using Business.Repositories.DataRepositories;
+using Business.Repositories.Repositories.DataRepositories;
 using Business.Services;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Data;
@@ -21,7 +22,7 @@ AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
 builder.Services.AddScoped<INodeRepository, NodeRepository>();
-builder.Services.AddScoped<IWeatherEffectsRepository, WeatherEffectRepository>();
+builder.Services.AddScoped<IWorkSheetRepository, WorkSheetRepository>();
 builder.Services.AddScoped<IWildDirectionRepository, WildDirectionRepository>();
 
 #endregion
@@ -43,7 +44,7 @@ builder.Services.AddSingleton(mapper);
 
 builder.Services.AddScoped<IDocumentService, DocumentService>();
 builder.Services.AddScoped<INodeService, NodeService>();
-builder.Services.AddScoped<IWeatherEffectService, WeatherEffectService>();
+builder.Services.AddScoped<IWorkSheetService, WorkSheetService>();
 builder.Services.AddScoped<IWildDirectionService, WildDirectionService>();
 
 #endregion

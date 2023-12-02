@@ -18,10 +18,9 @@ namespace Repositories.Data.Configurations
 
             builder.Property(e => e.Name)
                 .IsRequired();
-            builder.Property(e => e.Description)
-                .IsRequired();
 
-            builder.HasMany(e => e.Nodes)
+
+            builder.HasMany(e => e.Worksheets)
                 .WithOne(e => e.Document)
                 .OnDelete(DeleteBehavior.SetNull);
         }

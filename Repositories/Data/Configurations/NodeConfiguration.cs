@@ -1,5 +1,4 @@
 ﻿using Business.Entities;
-using Business.Entities.Node_WeatherEffect;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -28,25 +27,14 @@ namespace Repositories.Data.Configurations
                 .IsRequired();
             builder.Property(e => e.WildSpeed)
                 .IsRequired();
-            builder.Property(e => e.CloudCover)
-                .IsRequired();
-            builder.Property(e => e.LowerBoundCloudCover)
-                .IsRequired();
-            builder.Property(e => e.HorizontalVisibility)
-                .IsRequired();
 
 
-            builder.HasOne(e => e.Document)
+            builder.HasOne(e => e.WorkSheet)
                 .WithMany()
-                .HasForeignKey(e => e.DocumentId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            builder.HasMany(e => e.NodeWeatherEffects)
-                   .WithOne(e => e.Node)
-                   .HasForeignKey(e => e.NodeId)
-                   .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasMany(e => e.NodeDirections)
+            builder.HasMany(e => e.Directions)
                 .WithOne(e => e.Node)
                 .HasForeignKey(e => e.NodeId)
                 .OnDelete(DeleteBehavior.SetNull);

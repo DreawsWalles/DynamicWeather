@@ -1,4 +1,4 @@
-﻿using Business.Entities.Node_WeatherEffect;
+﻿using Business.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace Business.Repositories.DataRepositories
 {
-    public interface IWeatherEffectsRepository : IRepository<WeatherEffect, Guid> { }
+    public interface IWorkSheetRepository : IRepository<WorkSheet, Guid> { }
 }
